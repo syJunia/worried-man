@@ -19,3 +19,4 @@ Kolla även spelen, Hjärter mfl chess , kolla rygel
 12) Sätta vi som default text editor, ändra genom sudo vi /usr/share/applications/defaults.list och skapa my-app.desktop i .local/share/applications/
 13) Installera catfish och sätta upp den som search efter filer i thunar
 14) Se till att det är testing distrubutionen  som används i repositoriyna
+15) installer git, sätta upp .ssh mot github
