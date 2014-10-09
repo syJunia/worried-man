@@ -1,22 +1,22 @@
-gpds .... ?? Opencpn som vanligt
+﻿Cd gpds .... ?? Opencpn som vanligt
 
 Göres vid nyinstall:
 med xfce4 desktop ta med xfce4 goddies
 
 1) Konfa usern sven till sudoer,lpadmin,dialout - med usermod -aG
-2) Intstallera VLC, Chrome,Skype, OpenCPN, synapse,gedit, wicd, shotwell, Calibre
+2 ) Byta repos till jessie == testing (etc/apt/sources.list g�ra sudo apt-get update, dist-upgrade) starta om
+3) Intstallera Chrome,Skype, OpenCPN, synapse, wicd, shotwell, Calibre
 Kolla även spelen, Hjärter mfl chess , kolla rygel
-3) dra sw startare till panelen, fixa till väder widget, topppanel widgets
+4) dra sw startare till panelen, fixa till väder widget, topppanel widgets
 - diskanvänding, mixer
-4) Fixa syntax i vi och nano, .vimrc, .nanorc
-5) sätta upp SSH via Putty
-6) Kopiera in bilder, sjökort, musik, videos, dokument, e-böcker
-7) Hämta ikon teman och pekare, välja utsende, bakgrund, gion-iconer,  
-8) Ev sätta upp skrivare
-9) sätta upp rfcomm konfiguration auto bind , Mac address till telefon mm
-10) konfa gpsd ... (om jag fått det till att funka)
-11) uppgradera panel plugins (ev. tex väder och gnom launcher)
-12) Sätta vi som default text editor, ändra genom sudo vi /usr/share/applications/defaults.list och skapa my-app.desktop i .local/share/applications/
-13) Installera catfish och sätta upp den som search efter filer i thunar
-14) Se till att det är testing distrubutionen  som används i repositoriyna
-15) installer git, sätta upp .ssh mot github
+5) Fixa syntax i vi och nano, .vimrc, .nanorc
+6) sätta upp SSH via Putty (.ssh biblioteket - skapa det)
+7) Kopiera in bilder, sjökort, musik, videos, dokument, e-böcker
+8) Hämta ikon teman och pekare, välja utsende, bakgrund, gion-iconer,  equinox elementary tema
+9) Ev sätta upp skrivare
+10) sätta upp rfcomm konfiguration auto bind , Mac address till telefon mm
+11) konfa gpsd ... (om jag fått det till att funka)
+12) uppgradera panel plugins (ev. tex väder och gnom launcher)
+13) Sätta vi som default text editor, ändra genom sudo vi /usr/share/applications/defaults.list och skapa my-app.desktop i .local/share/applications/
+14) Installera catfish och sätta upp den som search efter filer i thunar
+15) Installer git, sätta upp .ssh mot github
