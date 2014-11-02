@@ -1,0 +1,5 @@
+Nu skriver jag en kort test text
+Jaha
+Som skall versionshanteras med git .. 
+Jomensa
+En rad till

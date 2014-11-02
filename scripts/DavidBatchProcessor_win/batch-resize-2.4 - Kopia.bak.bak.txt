@@ -1,0 +1,52 @@
+
+(define (script-fu-batch-resize globexp suffix ratio bsharpen bautolevel)
+  (define (resize-img n f)
+        (let* ((fname (car f))
+          (img (car (gimp-file-load 1 fname fname))))
+       (let* (
+             (drawable   (car (gimp-image-active-drawable img)))
+             (cur-width  (car (gimp-image-width img)))
+             (cur-height (car (gimp-image-height img)))
+                         (new-width  (* ratio cur-width))
+                         (new-height (* ratio cur-height))
+             (new_ratio      (min (/ new-width cur-width) (/ new-height cur-height)))
+             (width      (* new_ratio cur-width))
+             (height     (* new_ratio cur-height))
+                         )
+          
+         (gimp-image-undo-disable img)
+         (gimp-image-scale img width height)
+         (gimp-file-save 1 img (car (gimp-image-get-active-drawable img)) fname (string-append fname suffix))
+         (gimp-image-delete img)
+           )
+    )
+    (if (= n 1) 1 (resize-img (- n 1) (cdr f)))
+  )
+
+  ; Main loop
+  (set! files (file-glob globexp 0))
+  (resize-img (car files) (car (cdr files)))	
+
+
+)
+
+;((filelist (cadr (file-glob pattern 1))))
+
+; Register in Gimp Menu
+(script-fu-register "script-fu-batch-resize"
+		    _"_Many Pictures Resize..."
+		    "Resize Many Pictures"
+		    "Sven Tryding"
+		    "2011, Sven Tryding"
+		    "Jun 2, 2011"
+		    ""
+		    SF-STRING "Path" "C:\\Users\\Public\\Pictures\\2011 Våren\\Golf Niklas\\*.jpg"
+               SF-STRING "Suffix" "_smaller"
+
+               SF-VALUE "Scaling ratio (min 0.01, max 1)" "0.30"
+               SF-TOGGLE "Sharpen" TRUE
+		    SF-TOGGLE "AutoLevel" TRUE)
+
+(script-fu-menu-register "script-fu-batch-resize"
+			 "<Toolbox>/_Filters/_Script-Fu")
+
